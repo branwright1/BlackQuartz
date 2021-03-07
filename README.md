@@ -4,13 +4,13 @@
 Previus version was closed source and written Zig with Vulkan backend and planed as Quartz-like (macOS Compositor) with tiling (Yabai-like) transformation mode.
 Actual version is planned as quite different thing. 
 
-My goal is monolithic compositor with declaratative lua config in style of ![AwesomeWM](https://github.com/awesomeWM/awesome) from X11.
+My goal is monolithic compositor with declaratative lua config in style of AwesomeWM from X11.
 
 
 ### Planned features:
 - [ ] Simple configuration in Lua
 - [ ] XWayland support (X11 apps)
-- [ ] Support for gif wallpapers from ![oguri](https://github.com/vilhalmer/oguri)
+- [ ] Support for gif wallpapers from oguri
 - [ ] Say no to tiling (use sway or river)
 - [ ] Support for GLSL Shaders as wallpaper
 - [ ] Layershell support (mako, waybar and eww)
