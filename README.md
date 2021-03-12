@@ -1,33 +1,23 @@
-# BlackQuartz Compositor
+<p align="center">
+    <h1 align="center"># RoseQuartz Compositor</h1>
+</p>
 
-### Description:
-Previus version was closed source and written Zig with Vulkan backend and planed as Quartz-like (macOS Compositor) with tiling (Yabai-like) transformation mode.
-Actual version is planned as quite different thing. 
-
-My goal is monolithic compositor with declaratative lua config in style of AwesomeWM from X11.
-
-
-### Planned features:
-- [ ] Simple configuration in Lua
-- [ ] XWayland support (X11 apps)
-- [ ] Support for gif wallpapers from oguri
-- [ ] Say no to tiling (use sway or river)
-- [ ] Support for GLSL Shaders as wallpaper
-- [ ] Layershell support (mako, waybar and eww)
-- [ ] Compositing effects such as animations, fading, flash focus and shadows
+<p align="center">
+    <h3 align="center">Manual tiling through frames inspired by Herbstluftwm<h3>
+</p>
 
 
-## FAQ:
-**Q**: "Why C over Zig?"
+### How does manual tiling works?
+In manual tiling user decide where window should be spawned, in this case `framectl split left|right|top|bottom <size>` will create empty frame for you, this frame can handle single or multiple windows with optional gaps between them.
 
-**A**: "I really like Zig but it's not stable enough at least for me (update can break compositor) it's also a lot easier to embed Lua in C than Zig"
+For example in [Herbstluftwm](https://github.com/herbstluftwm/herbstluftwm) every frame can can be controled by `herbstclient split <direction> <size>`, `herbstclient focus <direction>` and removed by `herbstclient remove`. 
 
+Custom layouts can be created with `herbstclient chain . <command> . <another one> . <again> ...`.
 
-**Q2**: "Supported systems?"
-
-**A2**: "I think my compositor should work on **NetBSD** and **FreeBSD** since both provide Wayland and wlroots support but I'm targetting **GNU/Linux** users"
-
-
-**Q3**: "Another try to clone AwesomeWM on Wayland?"
-
-**A3**: "No, I don't want to clone Awesome but just some features like mouse menu, prompts and declarative configuration"
+### Deisgn goals
+- RoseQuartz IPC (rosectl)
+- Manual tiling protocol (framectl)
+- Simple decorations (likw titlebars)
+- GLSL Shaders as wallpaper or shadows
+- Rename from BlackQuartz to RoseQuartz
+- Complete rewrite from closed source version
