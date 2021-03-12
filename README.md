@@ -17,7 +17,7 @@ Custom layouts can be created with `herbstclient chain . <command> . <another on
 ### Deisgn goals
 - RoseQuartz IPC (rosectl)
 - Manual tiling protocol (framectl)
-- Simple decorations (likw titlebars)
+- Simple decorations (like titlebars)
 - GLSL Shaders as wallpaper or shadows
 - Rename from BlackQuartz to RoseQuartz
 - Complete rewrite from closed source version
