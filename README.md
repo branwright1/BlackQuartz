@@ -1,9 +1,9 @@
 <p align="center">
-    <h2 align="center">RoseQuartz Compositor</h2>
+    <h1 align="center">RoseQuartz Compositor</h1>
 </p>
 
 <p align="center">
-    <h4 align="center">Manual tiling through frames inspired by Herbstluftwm<h4>
+    <h3 align="center">Manual tiling through frames inspired by Herbstluftwm<h3>
 </p>
 
 
