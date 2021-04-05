@@ -23,7 +23,7 @@ I don't want to limit my users to well known and widely used config files with h
 ### TIER 2: (Usable state)
 - [ ] RoseQuartz IPC
 - [ ] Clipboard support
-- [ ] Custom tiling layout
+- [ ] Custom tiling protocol
 - [ ] Algorithm for frames
 - [ ] Window animations
 - [ ] GLSL shaders as window shadows
