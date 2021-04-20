@@ -6,24 +6,23 @@
 ## Dependencies
 **NOTE**: some packages can have different names and version depending on your distribution.
 
-zig 0.7.1
-wlroots 0.13.0
-wayland
-wayland-protocols
-pkgconfig
-libudev
-libevdev
-pixman
-libGL
-libX11
-libxkbcommon
+- zig 0.7.1
+- wayland
+- wayland-protocols
+- wlroots 0.13.0
+- pkgconfig
+- libudev
+- libevdev
+- pixman
+- libGL
+- libX11
+- libxkbcommon
 
 ## Build and test
 ```sh
 git clone https://github.com/branwright1/RoseQuartz.git --recurse-submodules
 
 cd RoseQuartz
-git submodule init
 
 ## for NixOS users:
 nix-shell
@@ -34,7 +33,7 @@ nix develop
 zig build run & disown
 
 # Open terminal
-WAYLAND_DISPLAY=wayland-1 <foot|alacritty>
+WAYLAND_DISPLAY=wayland-1 <foot|alacritty> 
 ```
 
 # Description
