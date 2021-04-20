@@ -20,10 +20,10 @@ libxkbcommon
 
 ## Build and test
 ```sh
-git clone https://github.com/branwright1/RoseQuartz.git
+git clone https://github.com/branwright1/RoseQuartz.git --recurse-submodules
 
 cd RoseQuartz
-git submodules init
+git submodule init
 
 ## for NixOS users:
 nix-shell

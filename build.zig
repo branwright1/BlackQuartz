@@ -20,7 +20,7 @@ pub fn build(b: *Builder) void {
         .dependencies = &[_]Pkg{ wayland, xkbcommon, pixman },
     };
 
-    const exe = b.addExecutable("rosequartz", "src/rosequartz.zig");
+    const exe = b.addExecutable("rosequartz", "src/main.zig");
     exe.setTarget(target);
     exe.setBuildMode(mode);
 
