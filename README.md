@@ -1,9 +1,6 @@
 <h1 align="center">RoseQuartz</h1>
 <p align="center"><i>Small in design stacking Wayland Compositor with double borders</i></p>
 <hr><p align="center">
-  <img alt="Stars" src="https://img.shields.io/github/stars/buffet/kiwmi.svg?label=Stars&style=flat" />
-  <a href="https://github.com/buffet/kiwmi/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/buffet/kiwmi.svg"/></a>
-  <a href="https://github.com/buffet/kiwmi/graphs/contributors"><img alt="GitHub contributors" src="https://img.shields.io/github/contributors/buffet/kiwmi"></a>
 </p>
 <br></br>
 
