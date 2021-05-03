@@ -1,10 +1,25 @@
-<p align="center">
-    <h1 align="center">RoseQuartz Compositor</h1>
-    <h4 align="center">Small in design stacking Wayland Compositor with double borders</h4>
+<h1 align="center">RoseQuartz</h1>
+<p align="center"><i>Small in design stacking Wayland Compositor with double borders</i></p>
+<hr><p align="center">
+  <img alt="Stars" src="https://img.shields.io/github/stars/buffet/kiwmi.svg?label=Stars&style=flat" />
+  <a href="https://github.com/buffet/kiwmi/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/buffet/kiwmi.svg"/></a>
+  <a href="https://github.com/buffet/kiwmi/graphs/contributors"><img alt="GitHub contributors" src="https://img.shields.io/github/contributors/buffet/kiwmi"></a>
 </p>
+<br></br>
 
-## Dependencies
-**NOTE**: some packages can have different names and version depending on your distribution.
+## Special thanks:
+
+[Wlroots](https://github.com/swaywm/wlroots) for excelent library which makes development way easier. Also thank to [river](https://github.com/ifreund/river) creator which made [zig-wlroots](https://github.com/swaywm/zig-wlroots) bindings which gave me motivation and [tinywl.zig](https://github.com/swaywm/zig-wlroots/blob/master/tinywl/tinywl.zig) used as base for this project.
+<br></br>
+
+## About project:
+
+RoseQuartz is Small and user-friendly Wayland Compositor with double borders like in [2bwm](https://github.com/venam/2bwm).
+<br></br>
+
+## Building:
+
+### Install following dependencies
 
 - zig 0.7.1
 - wayland
@@ -17,26 +32,31 @@
 - libGL
 - libX11
 - libxkbcommon
+- direnv (optional)
+  <br></br>
 
-## Build and test
+### Build and test:
+
 ```sh
-git clone https://github.com/branwright1/RoseQuartz.git --recurse-submodules
+# Create libc-paths file (fix bug on glibc-2.33+)
+zig libc > libc-paths
 
-cd RoseQuartz
-
-## for NixOS users:
-nix-shell
-## for nix-flakes users:
-nix develop
-
-## Build and test under X11/Wayland
+# Build and run with X11 or Wayland backend
 zig build run & disown
 
-# Open terminal
-WAYLAND_DISPLAY=wayland-1 <foot|alacritty> 
+# Open compatible program
+WAYLAND_DISPLAY=wayland-1 alacritty
 ```
 
-# Description
-**NOTE:** Some parts described here might be changed in the feature.
+### Extra steps for Nix/NixOS users:
 
-**RoseQuartz** - Small in design stacking Wayland Compositor with double borders. Heavly inspired by tinywl.zig, river and 2bwm. Please note that Compositor is currently in really early stage of development and should be used only for testing purpose running under Wayland or X11 backend. Next few months will bring support for popular wlroots protocols, IPC client, custom protocols, double borders, possible titlebars, animations and GLSL Shaders used as shadows.
+```sh
+# Ff you are using direnv
+direnv allow .
+
+# Standard nix users
+nix-shell
+
+# Experimental flake
+nix develop
+```

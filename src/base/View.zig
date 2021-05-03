@@ -1,3 +1,5 @@
+const View = @This();
+
 const std = @import("std");
 const os = std.os;
 const hca = std.heap.c_allocator;
@@ -6,9 +8,10 @@ const wlr = @import("wlroots");
 const wl = @import("wayland").server.wl;
 
 const Server = @import("Server.zig");
-const View = @This();
+const Cursor = @import("../input/Cursor.zig");
 
 server: *Server,
+cursor: *Cursor,
 link: wl.list.Link = undefined,
 xdg_surface: *wlr.XdgSurface,
 
@@ -52,10 +55,10 @@ fn requestMove(
 ) void {
     const view = @fieldParentPtr(View, "request_move", listener);
     const server = view.server;
-    server.grabbed_view = view;
-    server.cursor_mode = .move;
-    server.grab_x = server.cursor.x - @intToFloat(f64, view.x);
-    server.grab_y = server.cursor.y - @intToFloat(f64, view.y);
+    cursor.grabbed_view = view;
+    cursor.mode = .move;
+    cursor.grab_x = cursor.x - @intToFloat(f64, view.x);
+    cursor.grab_y = cursor.y - @intToFloat(f64, view.y);
 }
 
 fn requestResize(
@@ -65,19 +68,19 @@ fn requestResize(
     const view = @fieldParentPtr(View, "request_resize", listener);
     const server = view.server;
 
-    server.grabbed_view = view;
-    server.cursor_mode = .resize;
-    server.resize_edges = event.edges;
+    cursor.grabbed_view = view;
+    cursor.mode = .resize;
+    cursor.resize_edges = event.edges;
 
     var box: wlr.Box = undefined;
     view.xdg_surface.getGeometry(&box);
 
     const border_x = view.x + box.x + if (event.edges.right) box.width else 0;
     const border_y = view.y + box.y + if (event.edges.bottom) box.height else 0;
-    server.grab_x = server.cursor.x - @intToFloat(f64, border_x);
-    server.grab_y = server.cursor.y - @intToFloat(f64, border_y);
+    cursor.grab_x = cursor.x - @intToFloat(f64, border_x);
+    cursor.grab_y = cursor.y - @intToFloat(f64, border_y);
 
-    server.grab_box = box;
-    server.grab_box.x += view.x;
-    server.grab_box.y += view.y;
+    cursor.grab_box = box;
+    cursor.grab_box.x += view.x;
+    cursor.grab_box.y += view.y;
 }

@@ -1,3 +1,5 @@
+const Output = @This();
+
 const std = @import("std");
 const os = std.os;
 
@@ -6,7 +8,6 @@ const wl = @import("wayland").server.wl;
 
 const Server = @import("Server.zig");
 const View = @import("View.zig");
-const Output = @This();
 
 const RenderData = struct {
     wlr_output: *wlr.Output,

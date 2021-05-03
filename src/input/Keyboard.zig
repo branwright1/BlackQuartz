@@ -1,3 +1,5 @@
+const Keyboard = @This();
+
 const std = @import("std");
 const hca = std.heap.c_allocator;
 
@@ -5,8 +7,7 @@ const wlr = @import("wlroots");
 const xkb = @import("xkbcommon");
 const wl = @import("wayland").server.wl;
 
-const Server = @import("Server.zig");
-const Keyboard = @This();
+const Server = @import("../base/Server.zig");
 
 server: *Server,
 link: wl.list.Link = undefined,

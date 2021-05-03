@@ -1,3 +1,2 @@
-.vscode/
+libc-paths
 zig-cache/
-heliodor.zig

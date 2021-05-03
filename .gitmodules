@@ -1,12 +1,16 @@
 [submodule "deps/zig-pixman"]
-	path = deps/zig-pixman
-	url = https://github.com/ifreund/zig-pixman.git
+path = deps/zig-pixman
+branch = master
+url = https://github.com/ifreund/zig-pixman.git
 [submodule "deps/zig-wayland"]
-	path = deps/zig-wayland
-	url = https://github.com/ifreund/zig-wayland.git
+path = deps/zig-wayland
+branch = master
+url = https://github.com/ifreund/zig-wayland.git
 [submodule "deps/zig-wlroots"]
-	path = deps/zig-wlroots
-	url = https://github.com/swaywm/zig-wlroots.git
+path = deps/zig-wlroots
+branch = master
+url = https://github.com/swaywm/zig-wlroots.git
 [submodule "deps/zig-xkbcommon"]
-	path = deps/zig-xkbcommon
-	url = https://github.com/ifreund/zig-xkbcommon.git
+path = deps/zig-xkbcommon
+branch = master
+url = https://github.com/ifreund/zig-xkbcommon.git

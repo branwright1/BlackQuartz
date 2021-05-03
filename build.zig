@@ -25,6 +25,7 @@ pub fn build(b: *Builder) void {
     exe.setBuildMode(mode);
 
     exe.linkLibC();
+    exe.setLibCFile("libc-paths");
 
     exe.addPackage(wayland);
     exe.linkSystemLibrary("wayland-server");
