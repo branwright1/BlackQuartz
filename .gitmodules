@@ -10,3 +10,15 @@
 [submodule "deps/zig-xkbcommon"]
 	path = deps/zig-xkbcommon
 	url = https://github.com/ifreund/zig-xkbcommon.git
+[submodule "lib/zig-wayland"]
+	path = lib/zig-wayland
+	url = https://github.com/ifreund/zig-wayland.git
+[submodule "lib/zig-wlroots"]
+	path = lib/zig-wlroots
+	url = https://github.com/swaywm/zig-wlroots.git
+[submodule "lib/zig-xkbcommon"]
+	path = lib/zig-xkbcommon
+	url = https://github.com/ifreund/zig-xkbcommon.git
+[submodule "lib/zig-pixman"]
+	path = lib/zig-pixman
+	url = https://github.com/ifreund/zig-pixman.git
