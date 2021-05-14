@@ -1,3 +1,5 @@
+const Server = @This();
+
 const std = @import("std");
 const os = std.os;
 const hca = std.heap.c_allocator;
@@ -9,8 +11,6 @@ const wl = @import("wayland").server.wl;
 const Output = @import("Output.zig");
 const View = @import("View.zig");
 const Keyboard = @import("Keyboard.zig");
-
-const Server = @This();
 
 wl_server: *wl.Server,
 backend: *wlr.Backend,

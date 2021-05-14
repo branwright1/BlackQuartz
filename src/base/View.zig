@@ -1,3 +1,5 @@
+const View = @This();
+
 const std = @import("std");
 const os = std.os;
 const hca = std.heap.c_allocator;
@@ -6,7 +8,6 @@ const wlr = @import("wlroots");
 const wl = @import("wayland").server.wl;
 
 const Server = @import("Server.zig");
-const View = @This();
 
 server: *Server,
 link: wl.list.Link = undefined,
