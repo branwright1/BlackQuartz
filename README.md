@@ -19,7 +19,8 @@
 See [this gif](https://raw.githubusercontent.com/alnj/dotfiles/master/workflow.gif) from OpenBox as reference (thanks to [alnj](https://github.com/alnj)):
 
 ### List of things which I want to implement before switch from [AwesomeWM](https://github.com/awesomeWM/awesome):
-- IPC (roseclient)
+- IPC: roseclient
+- Clipboard: probably hardest part
 - Lua wrapper: roseclient as lua library for config
 - XWayland: for Android Studio and Autodesk Maya
 - Graphics tablet: for Autodesk Maya
