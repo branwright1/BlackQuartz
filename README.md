@@ -55,14 +55,3 @@ zig build run & disown
 # Open compatible program
 WAYLAND_DISPLAY=wayland-1 alacritty
 ```
-
-### Extra steps for Nix/NixOS users:
-
-```sh
-# Ff you are using direnv
-direnv allow .
-# Standard nix users
-nix-shell
-# Experimental flake
-nix develop
-```
