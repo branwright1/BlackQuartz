@@ -2,29 +2,30 @@ const std = @import("std");
 const Builder = std.build.Builder;
 const Pkg = std.build.Pkg;
 
-const ScanProtocolsStep = @import("deps/zig-wayland/build.zig").ScanProtocolsStep;
+const ScanProtocolsStep = @import("lib/zig-wayland/build.zig").ScanProtocolsStep;
 
-pub fn build(b: *Builder) void {
-    const target = b.standardTargetOptions(.{});
-    const mode = b.standardReleaseOptions();
+pub fn build(bld: *Builder) void {
+    const target = bld.standardTargetOptions(.{});
+    const mode = bld.standardReleaseOptions();
 
-    const scanner = ScanProtocolsStep.create(b);
+    const scanner = ScanProtocolsStep.create(bld);
     scanner.addSystemProtocol("stable/xdg-shell/xdg-shell.xml");
 
     const wayland = scanner.getPkg();
-    const xkbcommon = Pkg{ .name = "xkbcommon", .path = "deps/zig-xkbcommon/src/xkbcommon.zig" };
-    const pixman = Pkg{ .name = "pixman", .path = "deps/zig-pixman/pixman.zig" };
+    const xkbcommon = Pkg{ .name = "xkbcommon", .path = "lib/zig-xkbcommon/src/xkbcommon.zig" };
+    const pixman = Pkg{ .name = "pixman", .path = "lib/zig-pixman/pixman.zig" };
     const wlroots = Pkg{
         .name = "wlroots",
-        .path = "deps/zig-wlroots/src/wlroots.zig",
+        .path = "lib/zig-wlroots/src/wlroots.zig",
         .dependencies = &[_]Pkg{ wayland, xkbcommon, pixman },
     };
 
-    const exe = b.addExecutable("rosequartz", "src/main.zig");
+    const exe = bld.addExecutable("rosequartz", "src/main.zig");
     exe.setTarget(target);
     exe.setBuildMode(mode);
 
-   // exe.linkLibC();
+    exe.linkLibC();
+    exe.setLibCFile("libc-paths");
 
     exe.addPackage(wayland);
     exe.linkSystemLibrary("wayland-server");
@@ -42,8 +43,8 @@ pub fn build(b: *Builder) void {
     exe.install();
 
     const run_cmd = exe.run();
-    run_cmd.step.dependOn(b.getInstallStep());
+    run_cmd.step.dependOn(bld.getInstallStep());
 
-    const run_step = b.step("run", "Run the compositor");
+    const run_step = bld.step("run", "Run the compositor");
     run_step.dependOn(&run_cmd.step);
 }
