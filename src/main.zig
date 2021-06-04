@@ -31,6 +31,6 @@ pub fn main() anyerror!void {
 
     try server.backend.start();
 
-    std.log.info("Running RoseQuartz on WAYLAND_DISPLAY={}", .{socket});
+    std.log.info("Running RoseQuartz on WAYLAND_DISPLAY={s}", .{socket});
     server.wl_server.run();
 }

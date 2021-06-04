@@ -31,7 +31,7 @@ See [this gif](https://raw.githubusercontent.com/alnj/dotfiles/master/workflow.g
 
 ## Dependencies:
 
-- zig 0.7.1
+- zig 0.8
 - wayland
 - wayland-protocols
 - wlroots 0.13.0
