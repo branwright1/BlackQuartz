@@ -1,56 +1,54 @@
-<h1 align="center">RoseQuartz</h1>
+<h1 align="center">Snowflake</h1>
 <p align="center"><i>A programmatic floating wayland compositor</i></p>
 <hr><p align="center">
-<img alt="GitHub contributors" src="https://img.shields.io/github/contributors/HeavyRain266/RoseQuartz?label=Contributors">
-<img alt="GitHub issues" src="https://img.shields.io/github/issues/HeavyRain266/RoseQuartz">
-<img alt="GitHub" src="https://img.shields.io/github/license/HeavyRain266/RoseQuartz">
+<img alt="GitHub contributors" src="https://img.shields.io/github/contributors/HeavyRain266/SnowFlake">
+<img alt="GitHub issues" src="https://img.shields.io/github/issues-raw/HeavyRain266/Snowflake?label=issues">
+<img alt="GitHub license" src="https://img.shields.io/github/license/HeavyRain266/Snowflake">
 </p>
 <br></br>
 
-## Special thanks:
+## About this project:
 
-[wlroots](https://github.com/swaywm/wlroots) for excelent library which makes development way easier. Also thank to [river](https://github.com/ifreund/river) creator which made [zig-wlroots](https://github.com/swaywm/zig-wlroots) bindings which gave me motivation and [tinywl.zig](https://github.com/swaywm/zig-wlroots/blob/master/tinywl/tinywl.zig) used as base for this project.
-<br></br>
+**Snowflake** is work in progress Wayland Compositor with [Programmatic Floating](https://github.com/tam-carre/dotfiles#programmatic-floating) layout.
 
-## About project:
-
-**RoseQuartz** is work in progress Wayland Compositor with [Programmatic Floating](https://github.com/alnj/dotfiles) layout. That means user define position and geometry for selected apps and windows to create layout per workspace.
+**What is it "Programmatic Floating" layout?** It's new take on "floating" layout, by default all clients in Snowflake are floating like in OpenBox for example. User can specify geometry, position and workspace as keybind for desired clients to create layouts, all those clients are sticked to configured parameters but you can just move them and still have as just floating until you hit keybind to get them back to predefined position. People can say that "tiling is more efficient" but I would say it's not thruth because you still have to position and resize windows by hands.
 
 See [this gif](https://raw.githubusercontent.com/alnj/dotfiles/master/workflow.gif) from OpenBox as reference (thanks to [alnj](https://github.com/alnj)):
 
-### List of things which I want to implement before switch from [river](https://github.com/ifreund/river):
-- IPC: roseclient
-- Clipboard: probably hardest part
-- Lua wrapper: roseclient as lua library for config
-- XWayland: for Android Studio and Autodesk Maya
-- Graphics tablet: for Autodesk Maya
-- Double borders: stolen idea from [2bwm](https://github.com/venam/2bwm)
-- Damage tracking: for low battery usage on laptop
-- Kotlin rewrite: once my [kt-wlroots](https://github.com/HeavyRain266/kt-wlroots) will be finished
-<br></br>
-
-## Dependencies:
+### Dependencies:
 
 - zig 0.8
 - wayland
 - wayland-protocols
-- wlroots 0.13.0
-- pkgconfig
+- wlroots 0.14.0
+- pkg-config
 - libudev
 - libevdev
 - pixman
 - libGL
-- libX11
 - libxkbcommon
   <br></br>
 
-## Building and testing:
+## Build and test:
 
 ```sh
-# Clone with submodules
-git clone --recursive https://github.com/HeavyRain266/RoseQuartz.git
-# Build and run with X11 or Wayland backend
-zig build run & disown
-# Open compatible program
-WAYLAND_DISPLAY=wayland-1 alacritty
+# Clone repository with submodules.
+$ git clone --recurse-submodules https://github.com/HeavyRain266/Snowflake.git
+
+# Build compositor.
+$ cd Snowflake 
+$ zig build -Drelease-safe
+
+# Run Snowflake under X11 or Wayland session.
+$ ./zig-out/bin/snowflake
+
+# Test nested under X11 session using any compatible client.
+$ WAYLAND_DISPLAY=wayland-1 alacritty
+
+# Test nested under Wayland session using any client
+$ WAYLAND_DISPLAY=wayland-2 alacritty
 ```
+
+## Special thanks:
+
+I really want say thanks to [sway](https://github.com/swaywm/sway) maintainers for [wlroots](https://github.com/swaywm/wlroots) which is excelent library for writting wayland compositors and clients, without wlroots development of Snowflake wouldn't be that easy. Thanks to [river](https://github.com/ifreund/river) maintainer which created [zig-wlroots](https://github.com/swaywm/zig-wlroots) bindings which gave me motivation to finally write my own compositor and [tinywl](https://github.com/swaywm/zig-wlroots/blob/master/tinywl) which was used as base for this project. All of them are spending a lot of time to make Wayland bbetter and better every day, it's hard to describe how much important it is to me, again really thanks you all for those excelent projects.
