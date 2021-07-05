@@ -6,7 +6,7 @@ const wlr = @import("wlroots");
 const xkb = @import("xkbommon");
 const wl = @import("wayland").server.wl;
 
-const Server = @import("base/Server.zig");
+const Server = @import("server/Server.zig");
 
 pub fn main() anyerror!void {
     wlr.log.init(.debug);

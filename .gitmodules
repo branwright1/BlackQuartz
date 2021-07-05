@@ -1,16 +1,16 @@
-[submodule "lib/zig-wayland"]
-    path = lib/zig-wayland
+[submodule "libs/zig-wayland"]
+    path = libs/zig-wayland
     branch = master
 	url = https://github.com/ifreund/zig-wayland.git
-[submodule "lib/zig-wlroots"]
-    path = lib/zig-wlroots
+[submodule "libs/zig-wlroots"]
+    path = libs/zig-wlroots
     branch = master
 	url = https://github.com/swaywm/zig-wlroots.git
-[submodule "lib/zig-xkbcommon"]
-    path = lib/zig-xkbcommon
+[submodule "libs/zig-xkbcommon"]
+    path = libs/zig-xkbcommon
     branch = master
 	url = https://github.com/ifreund/zig-xkbcommon.git
-[submodule "lib/zig-pixman"]
-    path = lib/zig-pixman
+[submodule "libs/zig-pixman"]
+    path = libs/zig-pixman
     branch = master
 	url = https://github.com/ifreund/zig-pixman.git
